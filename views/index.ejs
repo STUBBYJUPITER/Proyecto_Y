@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body  class="text-center">
+    <div class="contenedor"></div>
+    <h1>pagina de inicio</h1>
+    <%if (login) { %>
+        <h1>BIENVENIDO - <strong><%= name %></strong>-</h1>
+        <a href="logout" class="a-logout">Cerrar Sesion</a>
+
+    <% } else { %>
+        <h1><strong><%= name %></strong></h1>
+        <a href="login" class="a-login">Iniciar Sesion</a>
+    <% } %> 
+    </div>
+    <div class="contenedor2">
+
+        
+    </div>
+</body> 
+</html>

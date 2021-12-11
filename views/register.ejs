@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+    <div class="register-form">
+        <h1>Formulario de registro</h1>
+        <hr>
+        <form action="/register" method="POST">
+
+            <label for="username">Username </label>
+            <input type="text" name="username" required>
+
+            <label for="nombre">Nombre </label>
+            <input type="text" name="nombre" required>
+            <hr>
+            <label for="apellido1">Primer apellido </label>
+            <input type="text" name="apellido1" required>
+            <hr>
+            <label for="apellido2">Segundo Apellido </label>
+            <input type="text" name="apellido2" required>
+            <hr>
+            <label for="f_nacimiento">Fecha de nacimiento</label>
+            <input type="date" name="f_nacimiento" required>
+            <hr>
+            <label for="correo">Correo Electronico  </label>
+            <input type="text" name="correo" required>
+            <hr>
+            <label for="rol">Rol</label>
+            <select name="rol" id="rol" class="select-rol">
+                <option value="ciudadano">Ciudadano</option>
+                <option value="admin">Admin</option>
+
+            </select>
+            <hr>
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" required>
+
+            <label for="pass2">Confirmar Contraseña</label>
+            <input type="password" name="pass2" required>
+            <div style="display: inline;">
+            <input type="submit" class="btn-save" value="Save"><a href="/" class="btn-cancel">cancelar</a>
+
+            </div>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <% if(typeof alert != "undefined"){ %>
+                <script>
+                    Swal.fire({title: '<%= alertTitle %>',
+                        title:'<%= alertTitle %>',
+                        text:'<%= alertMessage %>',
+                        icon:'<%= alertIcon %>',
+                        showConfirmButton: <%= showConfirmButton %> ,
+                        timer: <%= timer %>
+                    }).then(()=>{
+                        window.location='/<%= ruta %>'
+                    })
+                </script>
+                <% } %>
+        </form>
+
+    </div>
+</body>
+</html>
